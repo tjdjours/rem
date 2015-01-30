@@ -4,14 +4,14 @@
 // then the variable below would be 10px.
 $baseline-px: 10px;
 
-@mixin rem($property, $px-values) {
-  // Convert the baseline into rems;  
-  $baseline-rem: ($baseline-px / 1rem) * 1rem;
+@mixin remeth($property, $px-values) {
+  // Convert the baseline into rems
+  $baseline-rem: $baseline-px / 1rem * 1;
   // Print the first line in pixel values
   #{$property}: $px-values;
   // If there is only one (numeric) value, return the property/value line for it.
   @if type-of($px-values) == "number" {
-    #{$property}: ($px-values / $baseline-rem) * 1px; }
+    #{$property}: $px-values / $baseline-rem; }
   @else {
     // Create an empty list that we can dump values into
     $rem-values: ();
