@@ -11,7 +11,7 @@ $baseline-px: 10px;
   #{$property}: $px-values;
   // If there is only one (numeric) value, return the property/value line for it.
   @if type-of($px-values) == "number" {
-    #{$property}: ($px-values / $baseline-rem) *1px; }
+    #{$property}: ($px-values / $baseline-rem) * 1px; }
   @else {
     // Create an empty list that we can dump values into
     $rem-values: ();
